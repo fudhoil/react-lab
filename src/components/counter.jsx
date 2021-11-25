@@ -24,7 +24,7 @@ class Counter extends React.Component {
   //   }
 
   handleIncreament = () => {
-    this.setState({ count: this.state.value + 1 });
+    this.setState({ value: this.state.value + 1 });
   };
 
   render() {
@@ -50,8 +50,8 @@ class Counter extends React.Component {
   }
 
   formatCount() {
-    const { value: count } = this.state;
-    return count === 0 ? "Zero" : count;
+    const { value: value } = this.state;
+    return value === 0 ? "Zero" : value;
   }
 }
 
