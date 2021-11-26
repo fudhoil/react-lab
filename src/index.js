@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-// import Counters from './components/counters';
-import Main from './main';
+import Counters from './components/counters';
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
