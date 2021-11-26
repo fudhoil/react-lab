@@ -14,6 +14,7 @@ class App extends React.Component {
 
   handleClick = (i) => {
     this.setState({ clickedText: texts[i] });
+    i++;
   };
 
   render() {
