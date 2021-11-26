@@ -25,7 +25,7 @@ class Counter extends React.Component {
           onClick={() => this.props.onIncrement(this.props.counter)}
           className="btn btn-secondary btn-sm"
         >
-          Increment
+          {this.props.text}
         </button>
         <button
           onClick={() => this.props.onDelete(this.props.counter.id)}

@@ -3,21 +3,21 @@ import Counter from "./counter";
 
 class Counters extends React.Component {
   render() {
-    const { onReset, counters, onDelete, onIncrement, onNext } = this.props;
+    const { onReset, counters, onDelete, onIncrement, onText } = this.props;
     return (
       <div>
         <button onClick={onReset} className="btn btn-primary btn-sm m-2">
           Reset
         </button>
-        <button onClick={onNext} className="btn btn-primary btn-sm m-2">
-          Next
+        <button onClick={onText} className="btn btn-primary btn-sm m-2">
+          Text
         </button>
         {counters.map((counter) => (
           <Counter
             key={counter.id}
             onDelete={onDelete}
             onIncrement={onIncrement}
-            onNext={onNext}
+            onText={onText}
             counter={counter}
           ></Counter>
         ))}
