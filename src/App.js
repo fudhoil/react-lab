@@ -2,60 +2,31 @@ import { react } from "@babel/types";
 import React, { Component } from "react";
 import NavBar from "./components/navbar";
 
-class App extends React.Component {
-  state = {
-    counters: [{ id: 1, value: 1, text: "Hai cantik" }],
-  };
+const texts = ["Text 1", "Text 2", "Text 3", "Text 4"];
 
+class App extends React.Component {
   constructor(props) {
     super(props);
-    console.log("App - Constructor");
+    this.state = {
+      clickedText: "",
+    };
   }
 
-  componentDidMount() {
-    console.log("App - Mounted");
-  }
-
-  handleText = () => {
-   const (text:text)
+  handleClick = (i) => {
+    this.setState({ clickedText: texts[i] });
   };
 
-  handleIncrement = (counter) => {
-    const counters = [...this.state.counters];
-    const index = counters.indexOf(counter);
-    counters[index] = { ...counter };
-    counters[index].value++;
-    this.setState({ counters: counters });
-  };
-
-  handleReset = () => {
-    const counters = this.state.counters.map((c) => {
-      c.value = 0;
-      return c;
-    });
-    this.setState({ counters });
-  };
-
-  handleDelete = (counterId) => {
-    const counters = this.state.counters.filter((c) => c.id !== counterId);
-    this.setState({ counters: counters });
-  };
   render() {
-    console.log("App - Rendered");
+    const { clickedText } = this.state;
     return (
-      <React.Fragment>
-        <NavBar
-          totalCounters={this.state.counters.filter((c) => c.value > 0).length}
-        />
-        <main className="container">
-          <Counters
-            counters={this.state.counters}
-            onReset={this.handleReset}
-            onDelete={this.handleDelete}
-            onIncrement={this.handleIncrement}
-          />
-        </main>
-      </React.Fragment>
+      <div>
+        {texts.map((text, i) => (
+          <button key={i} onClick={() => this.handleClick(i)}>
+            Click me {i + 1}
+          </button>
+        ))}
+        {clickedText && <p>I clicked on button with text: {clickedText}</p>}
+      </div>
     );
   }
 }
