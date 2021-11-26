@@ -9,7 +9,7 @@ class Counters extends React.Component {
         <button onClick={onReset} className="btn btn-primary btn-sm m-2">
           Reset
         </button>
-        <button onClick={onNext} className="btn-primary btn-sm m-2">
+        <button onClick={onNext} className="btn btn-primary btn-sm m-2">
           Next
         </button>
         {counters.map((counter) => (
@@ -17,6 +17,7 @@ class Counters extends React.Component {
             key={counter.id}
             onDelete={onDelete}
             onIncrement={onIncrement}
+            onNext={onNext}
             counter={counter}
           ></Counter>
         ))}
