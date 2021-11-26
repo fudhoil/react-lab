@@ -21,6 +21,11 @@ class App extends React.Component {
     console.log("App - Mounted");
   }
 
+  handleNext = (counterId) => {
+    const counters = this.state.counters.filter((c) => c.id !== counterId);
+    this.setState({ counters: counters });
+  };
+
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -51,6 +56,7 @@ class App extends React.Component {
         <main className="container">
           <Counters
             counters={this.state.counters}
+            onNext={this.handleNext}
             onReset={this.handleReset}
             onDelete={this.handleDelete}
             onIncrement={this.handleIncrement}
