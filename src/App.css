@@ -1,3 +1,7 @@
+html,
+body {
+  overflow: hidden;
+}
 .footer {
   position: absolute;
   bottom: 0;
@@ -7,4 +11,8 @@
 .card {
   width: 18rem;
   margin: 20px;
+}
+
+img {
+  height: 100%;
 }
